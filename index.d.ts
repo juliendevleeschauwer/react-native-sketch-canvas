@@ -61,6 +61,7 @@ export interface LocalSourceImage {
 }
 
 export interface SketchCanvasProps {
+  defaultPaths : Path[];
   style?: StyleProp<ViewStyle>
   strokeColor?: string
   strokeWidth?: number
