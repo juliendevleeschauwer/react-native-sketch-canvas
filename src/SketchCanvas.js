@@ -52,6 +52,7 @@ class SketchCanvas extends React.Component {
 
     permissionDialogTitle: PropTypes.string,
     permissionDialogMessage: PropTypes.string,
+   
   };
 
   static defaultProps = {
@@ -72,6 +73,8 @@ class SketchCanvas extends React.Component {
 
     permissionDialogTitle: '',
     permissionDialogMessage: '',
+    
+     defaultPaths: [],
   };
 
   state = {
@@ -102,6 +105,18 @@ class SketchCanvas extends React.Component {
     text && text.forEach(t => t.fontColor = processColor(t.fontColor))
     return text
   }
+  
+      componentDidUpdate(prevProps, prevState) {
+        if (prevState.text !== this.state.text) {
+            this.setState({
+                text: this.state.text
+            });
+        }
+        if (prevProps.defaultPaths !== this.props.defaultPaths) {
+            this._pathsToProcess = this.props.defaultPaths;
+            this._paths = this.props.defaultPaths;
+        }
+    }
 
   clear() {
     this._paths = []
