@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react'
-import PropTypes from 'prop-types'
+//import PropTypes from 'prop-types'
 import ReactNative, {
   requireNativeComponent,
   NativeModules,
@@ -9,7 +9,7 @@ import ReactNative, {
   PanResponder,
   PixelRatio,
   Platform,
-  ViewPropTypes,
+  //ViewPropTypes,
   processColor
 } from 'react-native'
 import { requestPermissions } from './handlePermissions';
@@ -23,7 +23,7 @@ const RNSketchCanvas = requireNativeComponent('RNSketchCanvas', SketchCanvas, {
 const SketchCanvasManager = NativeModules.RNSketchCanvasManager || {};
 
 class SketchCanvas extends React.Component {
-  static propTypes = {
+  /*static propTypes = {
     style: ViewPropTypes.style,
     strokeColor: PropTypes.string,
     strokeWidth: PropTypes.number,
@@ -54,7 +54,7 @@ class SketchCanvas extends React.Component {
     permissionDialogMessage: PropTypes.string,
    
   };
-
+*/
   static defaultProps = {
     style: null,
     strokeColor: '#000000',
